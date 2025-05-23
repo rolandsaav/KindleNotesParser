@@ -40,7 +40,7 @@ def get_title_author(s:str) -> tuple[str,str]:
 
     return title, author
 
-def get_page_location_type(s:str) -> tuple[int, str, str]:
+def get_page_location_type(s:str) -> tuple[Optional[int], str, str]:
     values = s.split(" ")
 
     anno_type = values[2]
@@ -55,7 +55,7 @@ def get_page_location_type(s:str) -> tuple[int, str, str]:
         location = values[8]
         return page, location, anno_type
     else:
-        page = -1
+        page = None
         location = values[5]
         return page, location, anno_type
 
